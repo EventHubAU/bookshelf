@@ -306,6 +306,12 @@ const BookshelfModel = ModelBase.extend({
     }).init(this);
   },
 
+  belongsToManyCustom(Target, joinTableName, foreignKey, otherKey, foreignKeyTarget, otherKeyTarget) {
+    return this._relation('belongsToManyCustom', Target, {
+      joinTableName, foreignKey, otherKey, foreignKeyTarget, otherKeyTarget
+    }).init(this);
+  },
+
   /**
    * The {@link Model#morphOne morphOne} is used to signify a {@link oneToOne
    * one-to-one} {@link polymorphicRelation polymorphic relation} with
